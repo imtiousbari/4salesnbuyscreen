@@ -15,31 +15,26 @@ struct DetailsView: View {
     let autoplayInterval = 5.0
     
     var body: some View {
-        ScrollView{
-            ZStack(alignment: .top) {
-                ImageSliderView(images: images, frameSize: customFrameSize, autoplayInterval: autoplayInterval)
-                HStack {
-                    RoundedButton(action: {
-                        // Custom action
-                        print("Back Button tapped!")
-                    }, imageName: "arrow.left")
-                    Spacer()
-                    RoundedButton(action: {
-                        // Custom action
-                        print("Share Button tapped!")
-                    }, imageName: "square.and.arrow.up")
-                    
-                    RoundedButton(action: {
-                        // Custom action
-                        print("Fav Button tapped!")
-                    }, imageName: "heart")
+        VStack(spacing: -5) {
+            ScrollView{
+                ZStack(alignment: .top) {
+                    ImageSliderView(images: images, frameSize: customFrameSize, autoplayInterval: autoplayInterval)
+                    DetailsHeader()
                 }
-                .padding()
+                .edgesIgnoringSafeArea(.all)
+                .padding(.top,-10)
+                
+                DetailBody()
+                
             }
-            .edgesIgnoringSafeArea(.all)
-            //Image slider with action button------end
-            DetailBody()
+            Spacer()
+            DetailsFooter()
+                .padding(.bottom, -20)
+                .edgesIgnoringSafeArea(.all)
         }
+        .background(Color.LoginBG)
+
+        
     }
 }
 
@@ -53,9 +48,7 @@ struct DetailBody: View {
                     .font(.system(size: 20))
                     .bold()
                 Spacer()
-                ButtonFill(name: "KD 90000.000", bgColor: Color.Primary, height: 5, width: 150, fontSize: 14,textPadding: 10)
-//                    .padding(5)
-                
+                ButtonFill(name: "KD 90000.000", bgColor: Color.Primary, height: 5, width: 150, fontSize: 14,textPadding: 10)                
             }
             VStack(alignment: .leading){
                 HStack {
