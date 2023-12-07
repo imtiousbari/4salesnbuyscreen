@@ -18,15 +18,12 @@ struct DetailsView: View {
         ScrollView{
             ZStack(alignment: .top) {
                 ImageSliderView(images: images, frameSize: customFrameSize, autoplayInterval: autoplayInterval)
-                
                 HStack {
                     RoundedButton(action: {
                         // Custom action
                         print("Back Button tapped!")
                     }, imageName: "arrow.left")
-                    
                     Spacer()
-                    
                     RoundedButton(action: {
                         // Custom action
                         print("Share Button tapped!")
@@ -39,16 +36,10 @@ struct DetailsView: View {
                 }
                 .padding()
             }
-
             .edgesIgnoringSafeArea(.all)
-            
             //Image slider with action button------end
             DetailBody()
-
-            
-            
         }
-//        .padding()
     }
 }
 
@@ -62,9 +53,8 @@ struct DetailBody: View {
                     .font(.system(size: 20))
                     .bold()
                 Spacer()
-                ButtonFill(name: "KD 90000")
-                    .padding(10)
-                    .frame(width: 150, height: 10)
+                ButtonFill(name: "KD 90000.000", bgColor: Color.Primary, height: 5, width: 150, fontSize: 14,textPadding: 10)
+//                    .padding(5)
                 
             }
             VStack(alignment: .leading){
@@ -91,23 +81,18 @@ struct DetailBody: View {
             }
             .padding(.top)
             .padding(.bottom)
-            
-            //
-            
             VStack(alignment: .leading){
                 Text("Details").bold()
                     .font(.system(size: 18))
                     .padding(.bottom, 5)
                 Text("Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage."
-                    )
-//                .multilineTextAlignment(.justified)
+                )
+                .multilineTextAlignment(.leading)
+                .lineLimit(nil)
             }
-            
-            
-            
         }
         .padding()
-    }
+        .edgesIgnoringSafeArea(.all)}
 }
 #Preview {
     DetailsView()

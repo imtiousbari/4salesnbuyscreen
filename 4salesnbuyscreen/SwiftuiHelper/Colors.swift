@@ -24,5 +24,7 @@ extension Color {
     }
 
     static let Primary = Color(hex: "#E1262F")
+    static let BtnGreen = Color(hex: "#51AF33")
+    static let BtnGray = Color(hex: "#757575")
     static let LoginBG = Color(hex: "#F1F2F6")
 }
