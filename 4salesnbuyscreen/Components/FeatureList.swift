@@ -52,7 +52,7 @@ struct FeatureList: View {
 struct FeatureListView: View {
     var body: some View {
         VStack {
-            FeatureList(imageName: "heart.fill", text1: "Likes", text2: "100")
+            FeatureList(imageName: "calendar", text1: "Year", text2: "2000")
 //            FeatureList(imageName: "star.fill", text1: "Rating", text2: "4.5")
         }
         .padding()

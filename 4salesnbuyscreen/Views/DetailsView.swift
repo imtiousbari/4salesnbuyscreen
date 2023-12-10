@@ -25,6 +25,13 @@ struct DetailsView: View {
                 .padding(.top,-10)
                 
                 DetailBody()
+//                FeatureList(imageName: "calendar", text1: "Year", text2: "2000")
+//                    .padding()
+                ForEach(0..<10) { index in
+                                FeatureList(imageName: "calendar", text1: "Year", text2: "2000")
+                        .padding(.leading)
+                        .padding(.trailing)
+                            }
                 
             }
             Spacer()

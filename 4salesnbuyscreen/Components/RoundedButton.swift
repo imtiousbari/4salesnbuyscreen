@@ -21,7 +21,7 @@ struct RoundedButton: View {
                 .aspectRatio(contentMode: .fit)
                 .frame(width: 20, height: 20)
                 .padding(10)
-                .background(Color.white)
+                .background(Color.LoginBG)
                 .foregroundColor(.black)
                 .clipShape(Circle())
                 .shadow(radius: 1)
